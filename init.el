@@ -1,9 +1,14 @@
 (require 'package)
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ;;("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(add-to-list 'package-archives
+         '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
+
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -17,6 +22,8 @@
 (require 'setup-lsp-java)
 (require 'setup-ggtags)
 (require 'setup-treemacs)
+
+(use-package solarized-theme)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
