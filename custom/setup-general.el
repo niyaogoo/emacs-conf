@@ -1,6 +1,7 @@
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+(tool-bar-mode -1)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
