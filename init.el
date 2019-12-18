@@ -38,8 +38,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;;(load-theme 'solarized-light)
-(load-theme 'atom-one-dark)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,3 +50,6 @@
  '(package-selected-packages
    (quote
     (helm-gtags helm yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil solarized-theme rainbow-delimiters lsp-ui lsp-java ggtags dap-mode company-lsp bing-dict auto-highlight-symbol atom-one-dark-theme))))
+
+;;(load-theme 'solarized-light)
+(load-theme 'atom-one-dark)
