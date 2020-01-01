@@ -2,6 +2,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -49,9 +50,28 @@
   :init
   (add-hook 'c-mode-common-hook
             (lambda ()
-            (rainbow-delimiters-mode))))
+              (rainbow-delimiters-mode))))
+
+(use-package highlight-blocks
+  :init
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (highlight-blocks-mode))))
 
 ;; global line number
 (global-linum-mode)
+
+(defun goto-match-paren (arg)
+  "Go to the matching  if on (){}[], similar to vi style of % "
+  (interactive "p")
+  ;; first, check for "outside of bracket" positions expected by forward-sexp, etc
+  (cond ((looking-at "[\[\(\{]") (forward-sexp))
+        ((looking-back "[\]\)\}]" 1) (backward-sexp))
+        ;; now, try to succeed from inside of a bracket
+        ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
+        ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
+        (t nil)
+        )
+  )
 
 (provide 'setup-general)

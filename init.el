@@ -49,7 +49,7 @@
     ("b96849affc3dbee03dbed408ee72c6d394dbd5f28dcd222935ea4656869df4ec" "f1c21ec508b17eb15e8a30bc77951a50a88929e74a377edc9b6d5d51397d88c8" "ce6129f9462fd637890eff6afc14a4f5e35a41acf2569cedcb1bae5d3ec52f77" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" default)))
  '(package-selected-packages
    (quote
-    (helm-gtags helm yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil solarized-theme rainbow-delimiters lsp-ui lsp-java ggtags dap-mode company-lsp bing-dict auto-highlight-symbol atom-one-dark-theme))))
+    (highlight-blocks helm-gtags helm yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil solarized-theme rainbow-delimiters lsp-ui lsp-java ggtags dap-mode company-lsp bing-dict auto-highlight-symbol atom-one-dark-theme))))
 
 ;;(load-theme 'solarized-light)
 (load-theme 'atom-one-dark)
