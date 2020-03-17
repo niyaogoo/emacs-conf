@@ -38,9 +38,9 @@
 (use-package bing-dict)
 
 ;; auto highlight 
-(use-package auto-highlight-symbol
-  :init
-  (global-auto-highlight-symbol-mode))
+;; (use-package auto-highlight-symbol
+;;   :init
+;;   (global-auto-highlight-symbol-mode))
 
 (use-package undo-tree
   :init
@@ -70,8 +70,8 @@
         ;; now, try to succeed from inside of a bracket
         ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
         ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
-        (t nil)
-        )
-  )
+        (t nil)))
+
+(global-set-key (kbd "C-M-p") 'goto-match-paren)
 
 (provide 'setup-general)

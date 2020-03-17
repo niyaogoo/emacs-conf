@@ -140,4 +140,6 @@
       (setq projectile-completion-system 'helm)
       (setq projectile-indexing-method 'alien))))
 
+(use-package helm-xref)
+
 (provide 'setup-helm)
