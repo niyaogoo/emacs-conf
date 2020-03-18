@@ -3,6 +3,8 @@
 (setq-default tab-width 4)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+;; global line number
+(global-linum-mode)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -58,8 +60,9 @@
             (lambda ()
               (highlight-blocks-mode))))
 
-;; global line number
-(global-linum-mode)
+(use-package json-mode
+  :commands json-mode)
+
 
 (defun goto-match-paren (arg)
   "Go to the matching  if on (){}[], similar to vi style of % "

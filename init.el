@@ -26,6 +26,7 @@
 ;;(require 'setup-helm-gtags)
 (require 'setup-cedet)
 (require 'setup-lsp-c)
+(require 'setup-lsp-js)
 ;;(require 'setup-ggtags)
 
 ;;(use-package solarized-theme)
@@ -43,7 +44,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (yaml-mode zenburn-theme yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil spacemacs-theme solarized-theme rainbow-delimiters lsp-ui lsp-java highlight-blocks helm-xref helm-swoop helm-projectile helm-gtags dap-mode company-lsp ccls bing-dict auto-highlight-symbol atom-one-dark-theme))))
+    (json-mode web-mode tide yaml-mode zenburn-theme yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil spacemacs-theme solarized-theme rainbow-delimiters lsp-ui lsp-java highlight-blocks helm-xref helm-swoop helm-projectile helm-gtags dap-mode company-lsp ccls bing-dict auto-highlight-symbol atom-one-dark-theme))))
 
 (load-theme 'spacemacs-dark)
 (custom-set-faces
