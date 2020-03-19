@@ -21,12 +21,16 @@
   :config 
   (add-hook 'java-mode-hook 'lsp))
 
-;; (use-package dap-mode
-;;   :ensure t :after lsp-mode
-;;   :config
-;;   (dap-mode t)
-;;   (dap-ui-mode t))
-;;(use-package dap-java :after (lsp-java))(require 'cc-mode)
+(use-package dap-mode
+  :ensure t :after lsp-mode
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+
+
+(require 'dap-java) 
+;;(use-package dap-java :after (lsp-java))
+
 
 
 (provide 'setup-lsp-java)

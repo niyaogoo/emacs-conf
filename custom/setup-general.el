@@ -3,6 +3,8 @@
 (setq-default tab-width 4)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+;; global line number
+(global-linum-mode)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -38,9 +40,9 @@
 (use-package bing-dict)
 
 ;; auto highlight 
-(use-package auto-highlight-symbol
-  :init
-  (global-auto-highlight-symbol-mode))
+;; (use-package auto-highlight-symbol
+;;   :init
+;;   (global-auto-highlight-symbol-mode))
 
 (use-package undo-tree
   :init
@@ -58,8 +60,9 @@
             (lambda ()
               (highlight-blocks-mode))))
 
-;; global line number
-(global-linum-mode)
+(use-package json-mode
+  :commands json-mode)
+
 
 (defun goto-match-paren (arg)
   "Go to the matching  if on (){}[], similar to vi style of % "
@@ -70,8 +73,8 @@
         ;; now, try to succeed from inside of a bracket
         ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
         ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
-        (t nil)
-        )
-  )
+        (t nil)))
+
+(global-set-key (kbd "C-M-p") 'goto-match-paren)
 
 (provide 'setup-general)
