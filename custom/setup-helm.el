@@ -23,6 +23,7 @@
     ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
     (global-set-key (kbd "C-c h") 'helm-command-prefix)
     (global-set-key (kbd "M-c") 'projectile-find-file)
+    (global-set-key (kbd "M-i") 'helm-imenu)
     (global-unset-key (kbd "C-x c"))
 
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action

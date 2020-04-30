@@ -5,6 +5,7 @@
 (menu-bar-mode -1)
 ;; global line number
 (global-linum-mode)
+(hl-line-mode t)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -54,11 +55,11 @@
             (lambda ()
               (rainbow-delimiters-mode))))
 
-(use-package highlight-blocks
-  :init
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (highlight-blocks-mode))))
+;; (use-package highlight-blocks
+;;   :init
+;;   (add-hook 'c-mode-common-hook
+;;             (lambda ()
+;;               (highlight-blocks-mode))))
 
 (use-package json-mode
   :commands json-mode)
