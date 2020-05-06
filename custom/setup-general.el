@@ -77,5 +77,6 @@
         (t nil)))
 
 (global-set-key (kbd "C-M-p") 'goto-match-paren)
+(global-set-key (kbd "C-x C-c") nil)
 
 (provide 'setup-general)
