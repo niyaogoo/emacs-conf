@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+umask 022
+
+. /lib/lsb/init-functions
+
+RETVAL=0
+frpc="/home/ny/frp_0.32.1_linux_amd64/frpc"
+frpc_conf="/home/ny/frp_0.32.1_linux_amd64/frpc.ini"
+
+start() {
+    #nohup $frpc -c $frpc_conf > /var/log/frpc.log 2>&1 &
+    start-stop-daemon --start --oknodo --chuid 0:0 --pidfile /run/frpc.pid --exec /usr/bin/nohup /usr/bin/frpc -- -c /etc/frp/frpc.ini > /var/log/frpc.log 2>&1 & echo $! > /run/frpc.pid
+    RETVAL=$?
+    echo $!
+    return $RETVAL
+}
+
+stop() {
+    start-stop-daemon --stop --pidfile /run/frpc.pid --exec /usr/bin/frpc
+    RETVAL=$?
+    echo stop result $RETVAL
+    return $RETVAL
+}
+
+status() {
+    status_of_proc -p /run/frpc.pid /usr/bin/frpc frpc  && exit 0 || exit $?
+    echo status result $RETVAL
+    return $RETVAL
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+      stop
+      ;;
+  status)
+      status
+      ;;
+  *)
+    echo "Format error!"
+    exit 1
+    ;;
+esac
+
+echo $RETVAL
+exit $RETVAL

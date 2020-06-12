@@ -1,12 +1,8 @@
 ;; This is example
 
 (use-package lsp-mode
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  :init (setq lsp-keymap-prefix "s-l")
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
+  ;; set prefix for lsp-command-keymap (few alternatives - "c-l", "C-c l")
+  :init (lambda () (setq lsp-keymap-prefix "M-l") (setq lsp-enable-symbol-highlighting nil))
   :commands lsp)
 
 ;; optionally

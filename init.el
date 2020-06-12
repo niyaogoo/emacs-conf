@@ -19,7 +19,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (require 'setup-general)
-;; Do not develop java in emacs, so suck!
+;;(require 'setup-lsp)
 (require 'setup-lsp-java)
 (require 'setup-treemacs)
 (require 'setup-helm)
@@ -41,10 +41,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+    ("31f8d16d264e14e8e39c4f291e26cdd5516772a41660ef2ad895244c22024bd2" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (json-mode web-mode tide yaml-mode zenburn-theme yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil spacemacs-theme solarized-theme rainbow-delimiters lsp-ui lsp-java highlight-blocks helm-xref helm-swoop helm-projectile helm-gtags dap-mode company-lsp ccls bing-dict auto-highlight-symbol atom-one-dark-theme))))
+    (which-key helm-lsp vscdark-theme json-mode web-mode tide yaml-mode zenburn-theme yasnippet use-package treemacs-projectile treemacs-magit treemacs-icons-dired treemacs-evil spacemacs-theme solarized-theme rainbow-delimiters lsp-ui lsp-java highlight-blocks helm-xref helm-swoop helm-projectile helm-gtags dap-mode company-lsp ccls bing-dict auto-highlight-symbol atom-one-dark-theme))))
 
 (load-theme 'spacemacs-dark)
 (custom-set-faces
