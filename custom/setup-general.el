@@ -12,6 +12,7 @@
                                (interactive)
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
+
 ;; setup GDB
 (setq
  ;; use gdb-many-windows by default
@@ -69,14 +70,15 @@
   "Go to the matching  if on (){}[], similar to vi style of % "
   (interactive "p")
   ;; first, check for "outside of bracket" positions expected by forward-sexp, etc
-  (cond ((looking-at "[\[\(\{]") (forward-sexp))
-        ((looking-back "[\]\)\}]" 1) (backward-sexp))
+  (cond ((looking-at "[\[\(\{\<]") (forward-sexp))
+        ((looking-back "[\]\)\}\<]" 1) (backward-sexp))
         ;; now, try to succeed from inside of a bracket
-        ((looking-at "[\]\)\}]") (forward-char) (backward-sexp))
-        ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
+        ((looking-at "[\]\)\}\>]") (forward-char) (backward-sexp))
+        ((looking-back "[\[\(\{\>]" 1) (backward-char) (forward-sexp))
         (t nil)))
 
 (global-set-key (kbd "C-M-p") 'goto-match-paren)
+(global-set-key (kbd "C-t") 'bing-dict-brief)
 (global-set-key (kbd "C-x C-c") nil)
 
 (provide 'setup-general)

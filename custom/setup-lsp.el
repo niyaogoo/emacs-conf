@@ -2,7 +2,9 @@
 
 (use-package lsp-mode
   ;; set prefix for lsp-command-keymap (few alternatives - "c-l", "C-c l")
-  :init (lambda () (setq lsp-keymap-prefix "M-l") (setq lsp-enable-symbol-highlighting nil))
+  :init (progn
+          (setq lsp-keymap-prefix "M-l") (setq lsp-enable-symbol-highlighting nil)
+          (global-set-key (kbd "M-r") 'lsp-find-references))
   :commands lsp)
 
 ;; optionally
@@ -22,5 +24,7 @@
 (use-package which-key
   :config
   (which-key-mode))
+
+
 
 (provide 'setup-lsp)

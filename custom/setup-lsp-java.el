@@ -22,7 +22,7 @@
   (add-hook 'java-mode-hook 'lsp))
 
 (use-package dap-mode
-  :ensure t :after lsp-mode
+  :ensure t :after java-mode
   :config
   (dap-mode t)
   (dap-ui-mode t))
